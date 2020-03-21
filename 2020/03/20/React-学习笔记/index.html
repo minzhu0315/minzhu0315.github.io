@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Maven,Apache," />
+  <meta name="keywords" content="React,Web Application," />
 
 
 
@@ -94,22 +94,19 @@
 
 
 
-<meta name="description" content="参考文章:maven到底是个啥玩意~ What is Maven?Maven 是 Apache 下的一个纯 Java 开发的开源项目，简单来说是一个项目管理工具，核心功能是合理叙述项目间的依赖关系。 Maven java项目结构simple　—pom.xml　　　　核心配置，项目根下　—src　　—main　　　　　　　　　 —java　　　　java源码目录　　     　—resources">
+<meta name="description" content="React 学习笔记Notes for Front-End Web Development with React Course Notes for React Documentation 环境配置###Setting up Git and Node Install Yarn (Optional)Yarn 是一个类似npm的包管理框架，具体安装步骤请参考此处。 Installing create-r">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Maven 学习笔记">
-<meta property="og:url" content="http://yoursite.com/2020/03/20/Maven-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:title" content="React 学习笔记">
+<meta property="og:url" content="http://yoursite.com/2020/03/20/React-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Min&#39;s Blog">
-<meta property="og:description" content="参考文章:maven到底是个啥玩意~ What is Maven?Maven 是 Apache 下的一个纯 Java 开发的开源项目，简单来说是一个项目管理工具，核心功能是合理叙述项目间的依赖关系。 Maven java项目结构simple　—pom.xml　　　　核心配置，项目根下　—src　　—main　　　　　　　　　 —java　　　　java源码目录　　     　—resources">
+<meta property="og:description" content="React 学习笔记Notes for Front-End Web Development with React Course Notes for React Documentation 环境配置###Setting up Git and Node Install Yarn (Optional)Yarn 是一个类似npm的包管理框架，具体安装步骤请参考此处。 Installing create-r">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7295776-24b3692e5c50f974.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7295776-903e7936ece65af5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="article:published_time" content="2020-03-21T01:16:53.000Z">
-<meta property="article:modified_time" content="2020-03-21T01:37:50.049Z">
+<meta property="article:published_time" content="2020-03-21T01:52:54.000Z">
+<meta property="article:modified_time" content="2020-03-21T03:47:51.190Z">
 <meta property="article:author" content="Min Zhu">
-<meta property="article:tag" content="Maven">
-<meta property="article:tag" content="Apache">
+<meta property="article:tag" content="React">
+<meta property="article:tag" content="Web Application">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/7295776-24b3692e5c50f974.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -138,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/03/20/Maven-学习笔记/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/03/20/React-学习笔记/"/>
 
 
 
 
 
-  <title>Maven 学习笔记 | Min's Blog</title>
+  <title>React 学习笔记 | Min's Blog</title>
   
 
 
@@ -277,7 +274,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/20/Maven-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/20/React-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Min Zhu">
@@ -294,7 +291,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Maven 学习笔记</h1>
+          <h1 class="post-title" itemprop="name headline">React 学习笔记</h1>
         
 
         <div class="post-meta">
@@ -306,7 +303,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-20T21:16:53-04:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-20T21:52:54-04:00">
                 2020-03-20
               </time>
             
@@ -366,61 +363,41 @@
       
 
       
-        <p>参考文章:<a href="https://www.cnblogs.com/whgk/p/7112560.html" target="_blank" rel="noopener">maven到底是个啥玩意~</a></p>
-<h2 id="What-is-Maven"><a href="#What-is-Maven" class="headerlink" title="What is Maven?"></a>What is Maven?</h2><p>Maven 是 Apache 下的一个纯 Java 开发的开源项目，简单来说是一个项目管理工具，核心功能是合理叙述项目间的依赖关系。</p>
-<h2 id="Maven-java项目结构"><a href="#Maven-java项目结构" class="headerlink" title="Maven java项目结构"></a>Maven java项目结构</h2><p>simple<br>　—pom.xml　　　　核心配置，项目根下<br>　—src<br>　　—main　　　　　　<br>　　　 —java　　　　java源码目录<br>　　     　—resources　  java配置文件目录<br>　　—test<br>　　　—java　　　　测试源码目录<br>　　　—resources　  测试配置目录</p>
-<p>图中有一个target目录，是因为将该java项目进行了编译，src/main/java下的源代码就会编译成.class文件放入target目录中，target就是输出目录。</p>
-<h2 id="POM-xml"><a href="#POM-xml" class="headerlink" title="POM.xml"></a>POM.xml</h2><p>POM.xml( Project Object Model，项目对象模型 ) 是Maven工程的基本工作单元，用于描述项目如何构建，声明项目依赖，等等。执行任务或目标时，Maven 会在当前目录中查找 POM。它读取 POM，获取所需的配置信息，然后执行目标。通俗点讲，就是通过pom.xml文件的配置获取jar包，而不用手动去添加jar包。</p>
-<p>所有 POM 文件都需要 project 元素和三个必需字段：groupId，artifactId，version。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;project xmlns &#x3D; &quot;http:&#x2F;&#x2F;maven.apache.org&#x2F;POM&#x2F;4.0.0&quot;</span><br><span class="line">    xmlns:xsi &#x3D; &quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2001&#x2F;XMLSchema-instance&quot;</span><br><span class="line">    xsi:schemaLocation &#x3D; &quot;http:&#x2F;&#x2F;maven.apache.org&#x2F;POM&#x2F;4.0.0</span><br><span class="line">    http:&#x2F;&#x2F;maven.apache.org&#x2F;xsd&#x2F;maven-4.0.0.xsd&quot;&gt;</span><br><span class="line"> </span><br><span class="line">    &lt;!-- 模型版本 --&gt;</span><br><span class="line">    &lt;modelVersion&gt;4.0.0&lt;&#x2F;modelVersion&gt;</span><br><span class="line">    &lt;!-- 公司或者组织的唯一标志，并且配置时生成的路径也是由此生成， 如com.companyname.project-group，maven会将该项目打成的jar包放本地路径：&#x2F;com&#x2F;companyname&#x2F;project-group --&gt;</span><br><span class="line">    &lt;groupId&gt;com.companyname.project-group&lt;&#x2F;groupId&gt;</span><br><span class="line"> </span><br><span class="line">    &lt;!-- 项目的唯一ID，一个groupId下面可能多个项目，就是靠artifactId来区分的 --&gt;</span><br><span class="line">    &lt;artifactId&gt;project&lt;&#x2F;artifactId&gt;</span><br><span class="line"> </span><br><span class="line">    &lt;!-- 版本号 --&gt;</span><br><span class="line">    &lt;version&gt;1.0&lt;&#x2F;version&gt;</span><br><span class="line">&lt;&#x2F;project&gt;</span><br></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th>节点</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>project</td>
-<td>工程的根标签。</td>
-</tr>
-<tr>
-<td>modelVersion</td>
-<td>模型版本需要设置为 4.0。</td>
-</tr>
-<tr>
-<td>groupId</td>
-<td>这是工程组的标识。它在一个组织或者项目中通常是唯一的。例如，一个银行组织com.companyname.project-group 拥有所有的和银行相关的项目。</td>
-</tr>
-<tr>
-<td>artifactId</td>
-<td>这是工程的标识。它通常是工程的名称。例如，消费者银行。groupId 和 artifactId 一起定义了 artifact 在仓库中的位置。</td>
-</tr>
-<tr>
-<td>version</td>
-<td>这是工程的版本号。在 artifact 的仓库中，它用来区分不同的版本。</td>
-</tr>
-<tr>
-<td>### 如何通过pom.xml文件获取到想要的jar包？</td>
-<td></td>
-</tr>
-<tr>
-<td><img src="https://upload-images.jianshu.io/upload_images/7295776-24b3692e5c50f974.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></td>
-<td></td>
-</tr>
-</tbody></table>
-<p>###为什么通过groupId、artifactId、version三个属性就能定位一个jar包？</p>
-<p>加入上面的pom.xml文件属于A项目，那么A项目肯定是一个maven项目，通过上面这三个属性能够找到junit对应版本的jar包，那么junit项目肯定也是一个maven项目，junit的maven项目中的pom.xml文件就会有三个标识符，比如像下图这样，然后别的maven项目就能通过这三个属性来找到junit项目的jar包了。所以，在每个创建的maven项目时都会要求写上这三个属性值的。<img src="https://upload-images.jianshu.io/upload_images/7295776-903e7936ece65af5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h3 id="如何获得groupId这些字段呢？"><a href="#如何获得groupId这些字段呢？" class="headerlink" title="如何获得groupId这些字段呢？"></a>如何获得groupId这些字段呢？</h3><p> 一般而言，如果官方项目支持Maven，在其页面一般会有一段依赖字段以供复制，但也确实存在支持Maven但没有给出依赖字段的情况。而另一些项目的Maven特性由第三方维护，此时从官方渠道获得对Maven的支持比较困难。<br>因此，查询依赖字段首选的方案，是使用Maven搜索服务进行搜索。这里推荐一个地址：mvnrepository.com</p>
-<p>##Maven 仓库<br>通过pom.xml中的配置，就能够获取到想要的jar包(还没讲解如何配置先需要了解一下仓库的概念)，但是这些jar是在哪里呢？就是我们从哪里获取到的这些jar包？答案就是仓库。仓库有三类:</p>
-<ol>
-<li>本地仓库 (local)</li>
-<li>远程仓库 (remote)</li>
-<li>1 中央仓库 （默认的远程仓库）</li>
-<li>2 私服 （一般是公司内部自己设置的）</li>
-<li>其他公共库 （e.g. 阿里云的仓库）</li>
-</ol>
-<p>获取jar包时，优先从本地仓库查找，如果本地仓库中没有且配置了私服的话，就从私服中找，如果还没有就从中央仓库中获取，并下载到本地仓库。</p>
+        <h1 id="React-学习笔记"><a href="#React-学习笔记" class="headerlink" title="React 学习笔记"></a>React 学习笔记</h1><p>Notes for <a href="https://www.coursera.org/learn/front-end-react/home/week/1" target="_blank" rel="noopener">Front-End Web Development with React</a> Course</p>
+<p>Notes for <a href="https://zh-hans.reactjs.org/tutorial/tutorial.html#what-is-react" target="_blank" rel="noopener">React Documentation</a></p>
+<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p>###Setting up Git and Node</p>
+<h3 id="Install-Yarn-Optional"><a href="#Install-Yarn-Optional" class="headerlink" title="Install Yarn (Optional)"></a>Install Yarn (Optional)</h3><p>Yarn 是一个类似npm的包管理框架，具体安装步骤请参考<a href="https://yarnpkg.com/en/docs/install." target="_blank" rel="noopener">此处</a>。</p>
+<h3 id="Installing-create-react-app"><a href="#Installing-create-react-app" class="headerlink" title="Installing create-react-app"></a>Installing <em>create-react-app</em></h3><p>安装命令为<code>yarn global add create-react-app</code> </p>
+<p>若想要安装特定版本，则使用<code>create-react-app@VERSION_NUMBER</code>。</p>
+<h3 id="Generating-and-Serving-a-React-Project"><a href="#Generating-and-Serving-a-React-Project" class="headerlink" title="Generating and Serving a React Project"></a>Generating and Serving a React Project</h3><p>创建新project命令 <code>create-react-app confusion</code></p>
+<p>启动项目命令 <code>yarn start</code>，启动后可在localhost访问web，默认端口为3000</p>
+<h3 id="Configuring-React-Application"><a href="#Configuring-React-Application" class="headerlink" title="Configuring React Application"></a>Configuring React Application</h3><h4 id="Configure-project-to-use-reactstrap"><a href="#Configure-project-to-use-reactstrap" class="headerlink" title="Configure project to use reactstrap"></a>Configure project to use reactstrap</h4><p>Reactstrap 是一个用于集成 Bootstrap 和 React 应用程序的流行库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yarn add bootstrap</span><br><span class="line">yarn add reactstrap</span><br><span class="line">yarn add react-popper</span><br></pre></td></tr></table></figure>
+
+<p>在index.js中导入bootstrap 4</p>
+<figure class="highlight plain"><figcaption><span>'bootstrap/dist/css/bootstrap.min.css';```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">在app.js中导入组件</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;import &#123; Navbar, NavbarBrand &#125; from &#39;reactstrap&#39;;</span><br></pre></td></tr></table></figure>
+
+<p>##核心概念</p>
+<h3 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h3><p>JSX是一个 JavaScript 的语法扩展。</p>
+<ul>
+<li>React DOM 使用 <code>camelCase</code>（小驼峰命名）来定义属性的名称</li>
+</ul>
+<h3 id="Element"><a href="#Element" class="headerlink" title="Element"></a>Element</h3><blockquote>
+<p>Elements are the smallest building blocks of React apps.</p>
+</blockquote>
+<p>将一个element 渲染(render)到root DOM节点中，只需传入ReactDOM.render()</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, world<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">ReactDOM.render(element, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>));</span><br></pre></td></tr></table></figure>
+
+<p>该JSX片段会定位id为root的节点，并将”Hello World”插入其中。</p>
+<ul>
+<li>React 元素是不可变的</li>
+</ul>
+<p>###React Components</p>
+<p>React 允许将代码封装成组件（component），然后像插入普通 HTML 标签一样，在网页中插入这个 component。component使用户能够将UI分成多个独立的、可重复使用的片段。</p>
+<ul>
+<li>用户定义的component必须大写开头</li>
+</ul>
+<p>一个component接受一些参数，称之为props，并通过render方法</p>
 
       
     </div>
@@ -438,9 +415,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Maven/" rel="tag"># Maven</a>
+            <a href="/tags/React/" rel="tag"># React</a>
           
-            <a href="/tags/Apache/" rel="tag"># Apache</a>
+            <a href="/tags/Web-Application/" rel="tag"># Web Application</a>
           
         </div>
       
@@ -453,8 +430,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/20/ANTLR4-%E5%AD%A6%E4%B9%A0/" rel="next" title="ANTLR4 学习">
-                <i class="fa fa-chevron-left"></i> ANTLR4 学习
+              <a href="/2020/03/20/Maven-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="next" title="Maven 学习笔记">
+                <i class="fa fa-chevron-left"></i> Maven 学习笔记
               </a>
             
           </div>
@@ -462,10 +439,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/03/20/React-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="prev" title="React 学习笔记">
-                React 学习笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -612,7 +585,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#What-is-Maven"><span class="nav-number">1.</span> <span class="nav-text">What is Maven?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maven-java项目结构"><span class="nav-number">2.</span> <span class="nav-text">Maven java项目结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#POM-xml"><span class="nav-number">3.</span> <span class="nav-text">POM.xml</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何获得groupId这些字段呢？"><span class="nav-number">3.1.</span> <span class="nav-text">如何获得groupId这些字段呢？</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#React-学习笔记"><span class="nav-number">1.</span> <span class="nav-text">React 学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境配置"><span class="nav-number">1.1.</span> <span class="nav-text">环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Install-Yarn-Optional"><span class="nav-number">1.1.1.</span> <span class="nav-text">Install Yarn (Optional)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Installing-create-react-app"><span class="nav-number">1.1.2.</span> <span class="nav-text">Installing create-react-app</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generating-and-Serving-a-React-Project"><span class="nav-number">1.1.3.</span> <span class="nav-text">Generating and Serving a React Project</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Configuring-React-Application"><span class="nav-number">1.1.4.</span> <span class="nav-text">Configuring React Application</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Configure-project-to-use-reactstrap"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">Configure project to use reactstrap</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSX"><span class="nav-number">1.1.5.</span> <span class="nav-text">JSX</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Element"><span class="nav-number">1.1.6.</span> <span class="nav-text">Element</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
