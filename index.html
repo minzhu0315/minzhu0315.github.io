@@ -926,6 +926,487 @@ Here are the two interpretations of input f(); starting in rule stat:<br><img sr
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/Multithreading-in-Java/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Min Zhu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/default_avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Min Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/01/Multithreading-in-Java/" itemprop="url">Multithreading in Java</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-01T21:15:46-05:00">
+                2020-01-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Programming/" itemprop="url" rel="index">
+                    <span itemprop="name">Programming</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>Multithreading in java is a process of executing multiple threads simultaneously.</p>
+</blockquote>
+<h2 id="Life-Cycle"><a href="#Life-Cycle" class="headerlink" title="Life Cycle"></a>Life Cycle</h2><ol>
+<li>New</li>
+<li>Runnable</li>
+<li>Running</li>
+<li>Non-Runnable (Blocked)</li>
+<li>Terminated</li>
+</ol>
+<p><img src="https://upload-images.jianshu.io/upload_images/7295776-0be658e43844c950.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Life Cycle of Thread"></p>
+<h2 id="Create-thread"><a href="#Create-thread" class="headerlink" title="Create thread"></a>Create thread</h2><ol>
+<li>By extending Thread class<br>This essentially is another implementation of runnable interface.</li>
+</ol>
+<p><em>thread runs by calling start function</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Multi extends Thread&#123;  </span><br><span class="line">public void run()&#123;  </span><br><span class="line">System.out.println(&quot;thread is running...&quot;);  </span><br><span class="line">&#125;  </span><br><span class="line">public static void main(String args[])&#123;  </span><br><span class="line">Multi t1&#x3D;new Multi();  </span><br><span class="line">t1.start();  </span><br><span class="line"> &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>By implementing Runnable interface<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class Multi3 implements Runnable&#123;  </span><br><span class="line">public void run()&#123;  </span><br><span class="line">System.out.println(&quot;thread is running...&quot;);  </span><br><span class="line">&#125;  </span><br><span class="line">public static void main(String args[])&#123;  </span><br><span class="line">Multi3 m1&#x3D;new Multi3();  </span><br><span class="line">Thread t1 &#x3D;new Thread(m1);  </span><br><span class="line">t1.start();  </span><br><span class="line"> &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>By Callable and Future<br>To be finished.<h3 id="Thread-method"><a href="#Thread-method" class="headerlink" title="Thread method"></a>Thread method</h3>####non-static method used frequently</li>
+</ol>
+<ul>
+<li>start() note that we can <strong>not</strong> start a thread twice</li>
+<li>run()</li>
+<li>(final) setName(String name)</li>
+<li>(final) setPriority(int priority)<br>3 constants defined in Thread class:<ol>
+<li>Default priority of a thread is 5 (NORM_PRIORITY)</li>
+<li>the value of MIN_PRIORITY is 1</li>
+<li>the value of MAX_PRIORITY is 10</li>
+</ol>
+</li>
+<li>(final) setDaemon(boolean on)<br>set as daemon before start method</li>
+<li>(final) join(long millisec)<br>The join() method waits for a thread to die. In other words, it causes the currently running threads to stop executing until the thread it joins with completes its task.</li>
+<li>interrupt()</li>
+<li>(final) isAlive()<br>####static method</li>
+<li>yield()</li>
+<li>sleep(long millisec)<br>The Thread class provides two methods for sleeping a thread:<ol>
+<li>public static void sleep(long miliseconds)throws InterruptedException</li>
+<li>public static void sleep(long miliseconds, int nanos)throws InterruptedException</li>
+</ol>
+</li>
+<li>holdsLock(Object x)</li>
+<li>currentThread()<br>The currentThread() method returns a reference of currently executing thread.</li>
+<li>dumpStack()<br>####Example 1 (join and sleep method)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">class TestJoinMethod1 extends Thread&#123;  </span><br><span class="line"> public void run()&#123;  </span><br><span class="line">  for(int i&#x3D;1;i&lt;&#x3D;5;i++)&#123;  </span><br><span class="line">   try&#123;  </span><br><span class="line">    Thread.sleep(500);  </span><br><span class="line">   &#125;catch(Exception e)&#123;System.out.println(e);&#125;  </span><br><span class="line">  System.out.println(i);  </span><br><span class="line">  &#125;  </span><br><span class="line"> &#125;  </span><br><span class="line">public static void main(String args[])&#123;  </span><br><span class="line"> TestJoinMethod1 t1&#x3D;new TestJoinMethod1();  </span><br><span class="line"> TestJoinMethod1 t2&#x3D;new TestJoinMethod1();  </span><br><span class="line"> TestJoinMethod1 t3&#x3D;new TestJoinMethod1();  </span><br><span class="line"> t1.start();  </span><br><span class="line"> try&#123;  </span><br><span class="line">  t1.join();  </span><br><span class="line"> &#125;catch(Exception e)&#123;System.out.println(e);&#125;  </span><br><span class="line">  </span><br><span class="line"> t2.start();  </span><br><span class="line"> t3.start();  </span><br><span class="line"> &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+output:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">1</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">5</span><br></pre></td></tr></table></figure>
+As you know well that at a time only one thread is executed. If you sleep a thread for the specified time, the thread scheduler picks up another thread and so on.<br>####Example 2 (join and sleep method)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">class TestJoinMethod2 extends Thread&#123;  </span><br><span class="line"> public void run()&#123;  </span><br><span class="line">  for(int i&#x3D;1;i&lt;&#x3D;5;i++)&#123;  </span><br><span class="line">   try&#123;  </span><br><span class="line">    Thread.sleep(500);  </span><br><span class="line">   &#125;catch(Exception e)&#123;System.out.println(e);&#125;  </span><br><span class="line">  System.out.println(i);  </span><br><span class="line">  &#125;  </span><br><span class="line"> &#125;  </span><br><span class="line">public static void main(String args[])&#123;  </span><br><span class="line"> TestJoinMethod2 t1&#x3D;new TestJoinMethod2();  </span><br><span class="line"> TestJoinMethod2 t2&#x3D;new TestJoinMethod2();  </span><br><span class="line"> TestJoinMethod2 t3&#x3D;new TestJoinMethod2();  </span><br><span class="line"> t1.start();  </span><br><span class="line"> try&#123;  </span><br><span class="line">  t1.join(1500);  </span><br><span class="line"> &#125;catch(Exception e)&#123;System.out.println(e);&#125;  </span><br><span class="line">  </span><br><span class="line"> t2.start();  </span><br><span class="line"> t3.start();  </span><br><span class="line"> &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+output:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">1</span><br><span class="line">4</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">5</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">5</span><br></pre></td></tr></table></figure>
+In the above example,when t1 is completes its task for 1500 miliseconds(3 times) then t2 and t3 starts executing.</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/%E6%9B%B4%E6%94%B9git-bash-%E5%88%9D%E5%A7%8B%E7%9B%AE%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Min Zhu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/default_avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Min Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/01/%E6%9B%B4%E6%94%B9git-bash-%E5%88%9D%E5%A7%8B%E7%9B%AE%E5%BD%95/" itemprop="url">更改git-bash-初始目录</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-01T21:15:46-05:00">
+                2020-01-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Programming/" itemprop="url" rel="index">
+                    <span itemprop="name">Programming</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br><span class="line">touch .bashrc</span><br><span class="line">echo &quot;cd ~&#x2F;PATH&#x2F;&quot; &gt;&gt; .bashrc</span><br></pre></td></tr></table></figure>
+<p>信息来源：<a href="https://stackoverflow.com/questions/7017143/how-to-default-to-other-directory-instead-of-home-directory" target="_blank" rel="noopener">https://stackoverflow.com/questions/7017143/how-to-default-to-other-directory-instead-of-home-directory</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/java---source-1-5-%E4%B8%AD%E4%B8%8D%E6%94%AF%E6%8C%81-try-with-resources--%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Min Zhu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/default_avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Min Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/01/java---source-1-5-%E4%B8%AD%E4%B8%8D%E6%94%AF%E6%8C%81-try-with-resources--%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" itemprop="url">java---source-1-5-中不支持-try-with-resources--解决方法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-01T21:15:46-05:00">
+                2020-01-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Programming/" itemprop="url" rel="index">
+                    <span itemprop="name">Programming</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>报错：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Error:(19, 13) java: -source 1.5 中不支持 try-with-resources</span><br><span class="line">  (请使用 -source 7 或更高版本以启用 try-with-resources)</span><br></pre></td></tr></table></figure>
+<p>在网上查阅解决方法</p>
+<ol>
+<li>File - Project Structure -Project - Language Level 更改为8<br>无法解决。</li>
+<li>pom.xml 添加dependency<br>无法解决。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;properties&gt;</span><br><span class="line">      &lt;maven.compiler.source&gt;8&lt;&#x2F;maven.compiler.source&gt;</span><br><span class="line">      &lt;maven.compiler.target&gt;8&lt;&#x2F;maven.compiler.target&gt;</span><br><span class="line">&lt;&#x2F;properties&gt;</span><br></pre></td></tr></table></figure></li>
+<li>File - Project Structure -Modules- Language Level 更改为8<br>解决。</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -972,7 +1453,7 @@ Here are the two interpretations of input f(); starting in rule stat:<br><img sr
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -994,7 +1475,7 @@ Here are the two interpretations of input f(); starting in rule stat:<br><img sr
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
