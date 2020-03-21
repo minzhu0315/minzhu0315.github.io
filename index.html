@@ -227,6 +227,16 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
 
       
     </ul>
@@ -265,7 +275,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Min Zhu">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/default_avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -301,6 +311,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Programming/" itemprop="url" rel="index">
+                    <span itemprop="name">Programming</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -439,7 +471,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Min Zhu">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/default_avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -475,6 +507,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Programming/" itemprop="url" rel="index">
+                    <span itemprop="name">Programming</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -571,12 +625,194 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/20/The-Definitive-ANTLR-4-Reference-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Min Zhu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/default_avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Min Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/20/The-Definitive-ANTLR-4-Reference-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" itemprop="url">ANTLR4 学习</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-20T21:15:46-04:00">
+                2020-03-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Programming/" itemprop="url" rel="index">
+                    <span itemprop="name">Programming</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>#Chapter 2 The Big Picture<br>##2.1 Let’s Get Meta!</p>
+<ul>
+<li>interpreter<br>if an application computes or “executes” sentences, we call that<br>application an <em>interpreter</em>. Examples include calculators, configuration file<br>readers, and Python interpreters. </li>
+<li>translator<br>If we’re converting sentences from one language to another, we call that application a <em>translator</em>. Examples include Java to C# converters and compilers.</li>
+<li>parsers or syntax analyzers<br>Programs that recognize (identify the various components in a phrase and differentiate it from other phrases) languages.</li>
+<li>Two stages of parsing<ul>
+<li>lexical analysis or tokenizing (lexer)<br>The process of grouping characters into words or symbols (tokens)</li>
+<li>tokens<br>Tokens consist of at least two pieces of information: the token type (identifying the lexical structure) and the text matched for that token by the lexer.</li>
+<li>parser<br>The second stage is the actual parser and feeds off of these tokens to recognize<br>the sentence structure.<br>By default, ANTLR-generated parsers build a data structure called a <em>parse tree</em> or <em>syntax<br>tree</em> that records how the parser recognized the structure of the input sentence<br>and its component phrases.</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/7295776-2fdf263fa6dd6d58.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Example"></p>
+<p>We would specify phrase structure with a set of rules. Here is the grammar rule that corresponds to the first level of the <em>assign</em> subtree from the diagram”:<br><code>assign : ID &#39;=&#39; expr &#39;;&#39; ; // match an assignment statement like &quot;sp = 100;&quot;</code></p>
+<p>##2.2 Implementing Parsers <del>(之后有时间重新读一遍)</del></p>
+<blockquote>
+<p>The ANTLR tool generates <em>recursive-descent</em> parsers from grammar rules.</p>
+<blockquote>
+<p>A more general term for this kind of parsing is top-down parsing; recursive-descent parsers are just one kind of top-down parser implementation.</p>
+</blockquote>
+</blockquote>
+<p>The <em>stat</em> symbol means calling method <em>stat()</em> for the parse tree. To get an idea of what recursive-descent parsers look like, here’s the (slightly cleaned up) method that ANTLR generates for rule assign:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; assign : ID &#39;&#x3D;&#39; expr &#39;;&#39; ;</span><br><span class="line">void assign() &#123; &#x2F;&#x2F; method generated from rule assign</span><br><span class="line">match(ID); &#x2F;&#x2F; compare ID to current input symbol then consume</span><br><span class="line">match(&#39;&#x3D;&#39;);</span><br><span class="line">expr(); &#x2F;&#x2F; match an expression by calling expr()</span><br><span class="line">match(&#39;;&#39;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>For example, the stat rule that invokes assign<br>likely has a list of other kinds of statements.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;** Match any kind of statement starting at the current input position *&#x2F;</span><br><span class="line">stat: assign &#x2F;&#x2F; First alternative (&#39;|&#39; is alternative separator)</span><br><span class="line">| ifstat &#x2F;&#x2F; Second alternative</span><br><span class="line">| whilestat</span><br><span class="line">...</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
+<p>A parsing rule for stat looks like a switch.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">void stat() &#123;</span><br><span class="line">switch ( «current input token» ) &#123;</span><br><span class="line">CASE ID : assign(); break;</span><br><span class="line">CASE IF : ifstat(); break; &#x2F;&#x2F; IF is token type for keyword &#39;if&#39;</span><br><span class="line">CASE WHILE : whilestat(); break;</span><br><span class="line">...</span><br><span class="line">default : «raise no viable alternative exception»</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>##2.3 You Can’t Put Too Much Water into a Nuclear Reactor (ambiguous phrase)<br>We have to provide unambiguous grammars. </p>
+<ul>
+<li>duplicate is an obvious ambiguities </li>
+<li>some more subtle ambiguities:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">stat: expr &#39;;&#39; &#x2F;&#x2F; expression statement</span><br><span class="line">| ID &#39;(&#39; &#39;)&#39; &#39;;&#39; &#x2F;&#x2F; function call statement</span><br><span class="line">;</span><br><span class="line">expr: ID &#39;(&#39; &#39;)&#39;</span><br><span class="line">| INT</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
+Here are the two interpretations of input f(); starting in rule stat:<br><img src="https://upload-images.jianshu.io/upload_images/7295776-4baf6a4e66a8841c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+</ul>
+<blockquote>
+<p>Ambiguities can occur in the lexer as well as the parser, but ANTLR resolves<br>them so the rules behave naturally</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BEGIN : &#39;begin&#39; ; &#x2F;&#x2F; match b-e-g-i-n sequence; ambiguity resolves to BEGIN</span><br><span class="line">ID : [a-z]+ ; &#x2F;&#x2F; match one or more of any lowercase letter</span><br></pre></td></tr></table></figure>
+<p>that input beginner would match only to rule ID. The lexer would not match beginner as BEGIN followed by an ID matching input ner.</p>
+<p>##2.4 Building Language Applications Using Parse Trees</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/20/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Min Zhu">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/default_avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -724,7 +960,7 @@
       <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
+               src="/default_avatar.png"
                alt="Min Zhu" />
           <p class="site-author-name" itemprop="name">Min Zhu</p>
            
@@ -736,14 +972,32 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -751,6 +1005,19 @@
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/minzhu0315" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
           
         </div>
 
@@ -781,7 +1048,7 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
+  &copy;  2013 - 
   <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
