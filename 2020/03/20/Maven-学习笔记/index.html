@@ -94,13 +94,20 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Min Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="参考文章:maven到底是个啥玩意~ What is Maven?Maven 是 Apache 下的一个纯 Java 开发的开源项目，简单来说是一个项目管理工具，核心功能是合理叙述项目间的依赖关系。 Maven java项目结构simple　—pom.xml　　　　核心配置，项目根下　—src　　—main　　　　　　　　　 —java　　　　java源码目录　　     　—resources">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Maven 学习笔记">
+<meta property="og:url" content="http://yoursite.com/2020/03/20/Maven-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Min Blog">
+<meta property="og:description" content="参考文章:maven到底是个啥玩意~ What is Maven?Maven 是 Apache 下的一个纯 Java 开发的开源项目，简单来说是一个项目管理工具，核心功能是合理叙述项目间的依赖关系。 Maven java项目结构simple　—pom.xml　　　　核心配置，项目根下　—src　　—main　　　　　　　　　 —java　　　　java源码目录　　     　—resources">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7295776-24b3692e5c50f974.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7295776-903e7936ece65af5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="article:published_time" content="2020-03-21T01:16:53.000Z">
+<meta property="article:modified_time" content="2020-03-21T01:18:07.801Z">
 <meta property="article:author" content="Min Zhu">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/7295776-24b3692e5c50f974.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -129,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/03/20/Maven-学习笔记/"/>
 
 
 
 
 
-  <title>Min Blog</title>
+  <title>Maven 学习笔记 | Min Blog</title>
   
 
 
@@ -160,9 +167,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -245,9 +250,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -277,9 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/20/Maven-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url">Maven 学习笔记</a></h1>
+          <h1 class="post-title" itemprop="name headline">Maven 学习笔记</h1>
         
 
         <div class="post-meta">
@@ -329,9 +332,7 @@
       
 
       
-        
-          
-            <p>参考文章:<a href="https://www.cnblogs.com/whgk/p/7112560.html" target="_blank" rel="noopener">maven到底是个啥玩意~</a></p>
+        <p>参考文章:<a href="https://www.cnblogs.com/whgk/p/7112560.html" target="_blank" rel="noopener">maven到底是个啥玩意~</a></p>
 <h2 id="What-is-Maven"><a href="#What-is-Maven" class="headerlink" title="What is Maven?"></a>What is Maven?</h2><p>Maven 是 Apache 下的一个纯 Java 开发的开源项目，简单来说是一个项目管理工具，核心功能是合理叙述项目间的依赖关系。</p>
 <h2 id="Maven-java项目结构"><a href="#Maven-java项目结构" class="headerlink" title="Maven java项目结构"></a>Maven java项目结构</h2><p>simple<br>　—pom.xml　　　　核心配置，项目根下<br>　—src<br>　　—main　　　　　　<br>　　　 —java　　　　java源码目录<br>　　     　—resources　  java配置文件目录<br>　　—test<br>　　　—java　　　　测试源码目录<br>　　　—resources　  测试配置目录</p>
 <p>图中有一个target目录，是因为将该java项目进行了编译，src/main/java下的源代码就会编译成.class文件放入target目录中，target就是输出目录。</p>
@@ -387,8 +388,6 @@
 </ol>
 <p>获取jar包时，优先从本地仓库查找，如果本地仓库中没有且配置了私服的话，就从私服中找，如果还没有就从中央仓库中获取，并下载到本地仓库。</p>
 
-          
-        
       
     </div>
     
@@ -405,149 +404,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/20/ANTLR4-%E5%AD%A6%E4%B9%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Min Zhu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Min Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/20/ANTLR4-%E5%AD%A6%E4%B9%A0/" itemprop="url">ANTLR4 学习</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-20T21:15:46-04:00">
-                2020-03-20
-              </time>
+              <a href="/2020/03/20/ANTLR4-%E5%AD%A6%E4%B9%A0/" rel="next" title="ANTLR4 学习">
+                <i class="fa fa-chevron-left"></i> ANTLR4 学习
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>##5.1 Deriving Grammars from Language Samples</p>
-<blockquote>
-<p>Proper grammar design mirrors functional decomposition or top-down design<br>in the programming world.</p>
-</blockquote>
-<ul>
-<li>第一步：找到 start rule<br>例如，“a comma-separated-value (CSV) file is a sequence of<br>rows terminated by newlines.”<br><code>file : «sequence of rows that are terminated by newlines» ;</code></li>
-<li>逐步向下 by describing the elements identified on the right side of the start rule.<br>依然以CSV为例：<br><code>file : «sequence of rows that are terminated by newlines» ;</code><br><code>row : «sequence of fields separated by commas» ;</code><br><code>field : «number or string» ;</code></li>
-</ul>
-<p>再以Java为例，</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">compilationUnit : «optional packageSpec then classDefinitions» ;</span><br><span class="line">packageSpec : &#39;package&#39; identifier &#39;;&#39; ;</span><br><span class="line">classDefinition :</span><br><span class="line">&#39;class&#39; «optional superclassSpec optional implementsClause classBody» ;</span><br><span class="line">superclassSpec : &#39;super&#39; identifier ;</span><br><span class="line">implementsClause :</span><br><span class="line">&#39;implements&#39; «one or more identifiers separated by comma» ;</span><br><span class="line">classBody : &#39;&#123;&#39; «zero-or-more members» &#39;&#125;&#39; ;</span><br><span class="line">member : «nested classDefinition or field or method» ;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<p>##5.2 Using Existing Grammars as a Guide<br>##5.3 Recognizing Common Language Patterns with ANTLR Grammars<br>常用语言模式:</p>
-<ul>
-<li>sequence<br>CSV又是一个很好的例子：<br><code>file : (row &#39;\n&#39;)* ; // sequence with a &#39;\n&#39; terminator</code><br><code>row : field (&#39;,&#39; field)* ; // sequence with a &#39;,&#39; separator</code><br><code>field: INT ; // assume fields are just integers</code></li>
-<li>choice<br>当出现某种语言模式可以是这个也可以是那个的想法时，就应该使用choice (|)<br><code>type: &#39;float&#39; | &#39;int&#39; | &#39;void&#39; ; // user-defined types</code></li>
-<li>token dependence<br><code>vector : &#39;[&#39; INT+ &#39;]&#39; ; // [1], [1 2], [1 2 3], ...</code></li>
-<li>nested phrase<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">expr: ID &#39;[&#39; expr &#39;]&#39; &#x2F;&#x2F; a[1], a[b[1]], a[(2*b[1])]</span><br><span class="line">    | &#39;(&#39; expr &#39;)&#39; &#x2F;&#x2F; (1), (a[1]), (((1))), (2*a[1])</span><br><span class="line">    | INT &#x2F;&#x2F; 1, 94117</span><br><span class="line">    ;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -557,142 +435,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/20/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Min Zhu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Min Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/20/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-20T20:22:54-04:00">
-                2020-03-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -700,6 +447,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -720,8 +471,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -765,6 +525,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#What-is-Maven"><span class="nav-number">1.</span> <span class="nav-text">What is Maven?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maven-java项目结构"><span class="nav-number">2.</span> <span class="nav-text">Maven java项目结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#POM-xml"><span class="nav-number">3.</span> <span class="nav-text">POM.xml</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何获得groupId这些字段呢？"><span class="nav-number">3.1.</span> <span class="nav-text">如何获得groupId这些字段呢？</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -878,10 +654,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
