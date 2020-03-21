@@ -277,7 +277,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Min Zhu">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpeg">
+      <meta itemprop="image" content="/images/avator.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -453,7 +453,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Min Zhu">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpeg">
+      <meta itemprop="image" content="/images/avator.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -580,12 +580,12 @@
 <td></td>
 </tr>
 <tr>
-<td><img src="https://upload-images.jianshu.io/upload_images/7295776-24b3692e5c50f974.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></td>
+<td><img src="https://upload-images.jianshu.io/upload_images/7295776-24b3692e5c50f974.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></td>
 <td></td>
 </tr>
 </tbody></table>
 <p>###为什么通过groupId、artifactId、version三个属性就能定位一个jar包？</p>
-<p>加入上面的pom.xml文件属于A项目，那么A项目肯定是一个maven项目，通过上面这三个属性能够找到junit对应版本的jar包，那么junit项目肯定也是一个maven项目，junit的maven项目中的pom.xml文件就会有三个标识符，比如像下图这样，然后别的maven项目就能通过这三个属性来找到junit项目的jar包了。所以，在每个创建的maven项目时都会要求写上这三个属性值的。<img src="https://upload-images.jianshu.io/upload_images/7295776-903e7936ece65af5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>加入上面的pom.xml文件属于A项目，那么A项目肯定是一个maven项目，通过上面这三个属性能够找到junit对应版本的jar包，那么junit项目肯定也是一个maven项目，junit的maven项目中的pom.xml文件就会有三个标识符，比如像下图这样，然后别的maven项目就能通过这三个属性来找到junit项目的jar包了。所以，在每个创建的maven项目时都会要求写上这三个属性值的。<img src="https://upload-images.jianshu.io/upload_images/7295776-903e7936ece65af5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
 <h3 id="如何获得groupId这些字段呢？"><a href="#如何获得groupId这些字段呢？" class="headerlink" title="如何获得groupId这些字段呢？"></a>如何获得groupId这些字段呢？</h3><p> 一般而言，如果官方项目支持Maven，在其页面一般会有一段依赖字段以供复制，但也确实存在支持Maven但没有给出依赖字段的情况。而另一些项目的Maven特性由第三方维护，此时从官方渠道获得对Maven的支持比较困难。<br>因此，查询依赖字段首选的方案，是使用Maven搜索服务进行搜索。这里推荐一个地址：mvnrepository.com</p>
 <p>##Maven 仓库<br>通过pom.xml中的配置，就能够获取到想要的jar包(还没讲解如何配置先需要了解一下仓库的概念)，但是这些jar是在哪里呢？就是我们从哪里获取到的这些jar包？答案就是仓库。仓库有三类:</p>
 <ol>
@@ -649,7 +649,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Min Zhu">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpeg">
+      <meta itemprop="image" content="/images/avator.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -808,7 +808,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Min Zhu">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpeg">
+      <meta itemprop="image" content="/images/avator.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -929,7 +929,7 @@
 <ul>
 <li>duplicate is an obvious ambiguities </li>
 <li>some more subtle ambiguities:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">stat: expr &#39;;&#39; &#x2F;&#x2F; expression statement</span><br><span class="line">| ID &#39;(&#39; &#39;)&#39; &#39;;&#39; &#x2F;&#x2F; function call statement</span><br><span class="line">;</span><br><span class="line">expr: ID &#39;(&#39; &#39;)&#39;</span><br><span class="line">| INT</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
-Here are the two interpretations of input f(); starting in rule stat:<br><img src="https://upload-images.jianshu.io/upload_images/7295776-4baf6a4e66a8841c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+Here are the two interpretations of input f(); starting in rule stat:<br><img src="https://upload-images.jianshu.io/upload_images/7295776-4baf6a4e66a8841c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></li>
 </ul>
 <blockquote>
 <p>Ambiguities can occur in the lexer as well as the parser, but ANTLR resolves<br>them so the rules behave naturally</p>
@@ -990,7 +990,7 @@ Here are the two interpretations of input f(); starting in rule stat:<br><img sr
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Min Zhu">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpeg">
+      <meta itemprop="image" content="/images/avator.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1174,155 +1174,12 @@ In the above example,when t1 is completes its task for 1500 miliseconds(3 times)
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/%E6%9B%B4%E6%94%B9git-bash-%E5%88%9D%E5%A7%8B%E7%9B%AE%E5%BD%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Min Zhu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Min's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/01/01/%E6%9B%B4%E6%94%B9git-bash-%E5%88%9D%E5%A7%8B%E7%9B%AE%E5%BD%95/" itemprop="url">更改git-bash-初始目录</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-01T21:15:46-05:00">
-                2020-01-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Programming/" itemprop="url" rel="index">
-                    <span itemprop="name">Programming</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br><span class="line">touch .bashrc</span><br><span class="line">echo &quot;cd ~&#x2F;PATH&#x2F;&quot; &gt;&gt; .bashrc</span><br></pre></td></tr></table></figure>
-<p>信息来源：<a href="https://stackoverflow.com/questions/7017143/how-to-default-to-other-directory-instead-of-home-directory" target="_blank" rel="noopener">https://stackoverflow.com/questions/7017143/how-to-default-to-other-directory-instead-of-home-directory</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/java---source-1-5-%E4%B8%AD%E4%B8%8D%E6%94%AF%E6%8C%81-try-with-resources--%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Min Zhu">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpeg">
+      <meta itemprop="image" content="/images/avator.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1453,6 +1310,149 @@ In the above example,when t1 is completes its task for 1500 miliseconds(3 times)
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/%E6%9B%B4%E6%94%B9git-bash-%E5%88%9D%E5%A7%8B%E7%9B%AE%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Min Zhu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avator.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Min's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/01/%E6%9B%B4%E6%94%B9git-bash-%E5%88%9D%E5%A7%8B%E7%9B%AE%E5%BD%95/" itemprop="url">更改git-bash-初始目录</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-01T21:15:46-05:00">
+                2020-01-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Programming/" itemprop="url" rel="index">
+                    <span itemprop="name">Programming</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br><span class="line">touch .bashrc</span><br><span class="line">echo &quot;cd ~&#x2F;PATH&#x2F;&quot; &gt;&gt; .bashrc</span><br></pre></td></tr></table></figure>
+<p>信息来源：<a href="https://stackoverflow.com/questions/7017143/how-to-default-to-other-directory-instead-of-home-directory" target="_blank" rel="noopener">https://stackoverflow.com/questions/7017143/how-to-default-to-other-directory-instead-of-home-directory</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -1487,7 +1487,7 @@ In the above example,when t1 is completes its task for 1500 miliseconds(3 times)
       <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/avatar.jpeg"
+               src="/images/avator.jpeg"
                alt="Min Zhu" />
           <p class="site-author-name" itemprop="name">Min Zhu</p>
            
@@ -1575,7 +1575,7 @@ In the above example,when t1 is completes its task for 1500 miliseconds(3 times)
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy;  2013 - 
+  &copy; 
   <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
