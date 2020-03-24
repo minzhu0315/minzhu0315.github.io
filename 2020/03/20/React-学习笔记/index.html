@@ -102,7 +102,7 @@
 <meta property="og:description" content="React 学习笔记Notes for Front-End Web Development with React Course Notes for React Documentation 环境配置Setting up Git and NodeInstall Yarn (Optional)Yarn 是一个类似npm的包管理框架，具体安装步骤请参考此处。 Installing create-react">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-03-21T01:52:54.000Z">
-<meta property="article:modified_time" content="2020-03-21T07:28:07.963Z">
+<meta property="article:modified_time" content="2020-03-24T04:57:23.513Z">
 <meta property="article:author" content="Min Zhu">
 <meta property="article:tag" content="React">
 <meta property="article:tag" content="Web Application">
@@ -390,12 +390,36 @@
 <ul>
 <li>React 元素是不可变的</li>
 </ul>
+<p>React DOM（补充）</p>
+<ul>
+<li>element可以是DOM标签，也可以是用户自定义的component</li>
+</ul>
 <p>###React Components</p>
 <p>React 允许将代码封装成组件（component），然后像插入普通 HTML 标签一样，在网页中插入这个 component。component使用户能够将UI分成多个独立的、可重复使用的片段。</p>
 <ul>
-<li>用户定义的component必须大写开头</li>
+<li><p>用户定义的component必须大写开头</p>
+</li>
+<li><p>定义component的两种方式</p>
+<ul>
+<li><p>function component</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function Welcome(props) &#123;</span><br><span class="line">  return &lt;h1&gt;Hello, &#123;props.name&#125;&lt;&#x2F;h1&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>class component</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Welcome extends React.Component &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return &lt;h1&gt;Hello, &#123;this.props.name&#125;&lt;&#x2F;h1&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
 </ul>
-<p>一个component接受一些参数，称之为props，并通过render方法</p>
+<p>以上两个组件是等效的。function component接收带有数据的”props”（属性）对象并返回react element。</p>
+</li>
+</ul>
+<h4 id="Render-Component"><a href="#Render-Component" class="headerlink" title="Render Component"></a>Render Component</h4><p>当 React 元素为用户自定义组件时，它会将 JSX 所接收的属性（attributes）以及子组件（children）转换为单个对象传递给组件，这个对象被称之为 “props”。例如，这段代码会在页面上渲染 “Hello, Sara”：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function Welcome(props) &#123;</span><br><span class="line">  return &lt;h1&gt;Hello, &#123;props.name&#125;&lt;&#x2F;h1&gt;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const element &#x3D; &lt;Welcome name&#x3D;&quot;Sara&quot; &#x2F;&gt;;</span><br><span class="line">ReactDOM.render(</span><br><span class="line">  element,</span><br><span class="line">  document.getElementById(&#39;root&#39;)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>设计原则：组件不能修改自身的props</li>
+</ul>
+<p>####Component 的组合与拆分</p>
+<p>组件可以引用其他组件；组件可拆分为更小的组件，避免过度嵌套，并构建可复用的组件库。</p>
 
       
     </div>
@@ -583,7 +607,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#React-学习笔记"><span class="nav-number">1.</span> <span class="nav-text">React 学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境配置"><span class="nav-number">1.1.</span> <span class="nav-text">环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Setting-up-Git-and-Node"><span class="nav-number">1.1.1.</span> <span class="nav-text">Setting up Git and Node</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Install-Yarn-Optional"><span class="nav-number">1.1.2.</span> <span class="nav-text">Install Yarn (Optional)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Installing-create-react-app"><span class="nav-number">1.1.3.</span> <span class="nav-text">Installing create-react-app</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generating-and-Serving-a-React-Project"><span class="nav-number">1.1.4.</span> <span class="nav-text">Generating and Serving a React Project</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Configuring-React-Application"><span class="nav-number">1.1.5.</span> <span class="nav-text">Configuring React Application</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Configure-project-to-use-reactstrap"><span class="nav-number">1.1.5.1.</span> <span class="nav-text">Configure project to use reactstrap</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#核心概念"><span class="nav-number">1.2.</span> <span class="nav-text">核心概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JSX"><span class="nav-number">1.2.1.</span> <span class="nav-text">JSX</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Element"><span class="nav-number">1.2.2.</span> <span class="nav-text">Element</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#React-学习笔记"><span class="nav-number">1.</span> <span class="nav-text">React 学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境配置"><span class="nav-number">1.1.</span> <span class="nav-text">环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Setting-up-Git-and-Node"><span class="nav-number">1.1.1.</span> <span class="nav-text">Setting up Git and Node</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Install-Yarn-Optional"><span class="nav-number">1.1.2.</span> <span class="nav-text">Install Yarn (Optional)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Installing-create-react-app"><span class="nav-number">1.1.3.</span> <span class="nav-text">Installing create-react-app</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generating-and-Serving-a-React-Project"><span class="nav-number">1.1.4.</span> <span class="nav-text">Generating and Serving a React Project</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Configuring-React-Application"><span class="nav-number">1.1.5.</span> <span class="nav-text">Configuring React Application</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Configure-project-to-use-reactstrap"><span class="nav-number">1.1.5.1.</span> <span class="nav-text">Configure project to use reactstrap</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#核心概念"><span class="nav-number">1.2.</span> <span class="nav-text">核心概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JSX"><span class="nav-number">1.2.1.</span> <span class="nav-text">JSX</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Element"><span class="nav-number">1.2.2.</span> <span class="nav-text">Element</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Render-Component"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">Render Component</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
