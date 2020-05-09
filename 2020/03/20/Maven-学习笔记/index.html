@@ -405,12 +405,12 @@
 <td></td>
 </tr>
 <tr>
-<td><img src="https://upload-images.jianshu.io/upload_images/7295776-24b3692e5c50f974.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></td>
+<td><img src="https://upload-images.jianshu.io/upload_images/7295776-24b3692e5c50f974.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></td>
 <td></td>
 </tr>
 </tbody></table>
 <p>###为什么通过groupId、artifactId、version三个属性就能定位一个jar包？</p>
-<p>加入上面的pom.xml文件属于A项目，那么A项目肯定是一个maven项目，通过上面这三个属性能够找到junit对应版本的jar包，那么junit项目肯定也是一个maven项目，junit的maven项目中的pom.xml文件就会有三个标识符，比如像下图这样，然后别的maven项目就能通过这三个属性来找到junit项目的jar包了。所以，在每个创建的maven项目时都会要求写上这三个属性值的。<img src="https://upload-images.jianshu.io/upload_images/7295776-903e7936ece65af5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p>加入上面的pom.xml文件属于A项目，那么A项目肯定是一个maven项目，通过上面这三个属性能够找到junit对应版本的jar包，那么junit项目肯定也是一个maven项目，junit的maven项目中的pom.xml文件就会有三个标识符，比如像下图这样，然后别的maven项目就能通过这三个属性来找到junit项目的jar包了。所以，在每个创建的maven项目时都会要求写上这三个属性值的。<img src="https://upload-images.jianshu.io/upload_images/7295776-903e7936ece65af5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <h3 id="如何获得groupId这些字段呢？"><a href="#如何获得groupId这些字段呢？" class="headerlink" title="如何获得groupId这些字段呢？"></a>如何获得groupId这些字段呢？</h3><p> 一般而言，如果官方项目支持Maven，在其页面一般会有一段依赖字段以供复制，但也确实存在支持Maven但没有给出依赖字段的情况。而另一些项目的Maven特性由第三方维护，此时从官方渠道获得对Maven的支持比较困难。<br>因此，查询依赖字段首选的方案，是使用Maven搜索服务进行搜索。这里推荐一个地址：mvnrepository.com</p>
 <p>##Maven 仓库<br>通过pom.xml中的配置，就能够获取到想要的jar包(还没讲解如何配置先需要了解一下仓库的概念)，但是这些jar是在哪里呢？就是我们从哪里获取到的这些jar包？答案就是仓库。仓库有三类:</p>
 <ol>
