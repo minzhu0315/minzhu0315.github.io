@@ -102,7 +102,7 @@
 <meta property="og:description" content="##5.1 Deriving Grammars from Language Samples  Proper grammar design mirrors functional decomposition or top-down designin the programming world.   第一步：找到 start rule例如，“a comma-separated-value (CSV) f">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-03-21T01:15:46.000Z">
-<meta property="article:modified_time" content="2020-03-21T01:38:22.267Z">
+<meta property="article:modified_time" content="2020-05-10T04:00:39.220Z">
 <meta property="article:author" content="Min Zhu">
 <meta property="article:tag" content="Database">
 <meta property="article:tag" content="ANTLR">
@@ -371,6 +371,8 @@
 <li>第一步：找到 start rule<br>例如，“a comma-separated-value (CSV) file is a sequence of<br>rows terminated by newlines.”<br><code>file : «sequence of rows that are terminated by newlines» ;</code></li>
 <li>逐步向下 by describing the elements identified on the right side of the start rule.<br>依然以CSV为例：<br><code>file : «sequence of rows that are terminated by newlines» ;</code><br><code>row : «sequence of fields separated by commas» ;</code><br><code>field : «number or string» ;</code></li>
 </ul>
+<a id="more"></a>
+
 <p>再以Java为例，</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">compilationUnit : «optional packageSpec then classDefinitions» ;</span><br><span class="line">packageSpec : &#39;package&#39; identifier &#39;;&#39; ;</span><br><span class="line">classDefinition :</span><br><span class="line">&#39;class&#39; «optional superclassSpec optional implementsClause classBody» ;</span><br><span class="line">superclassSpec : &#39;super&#39; identifier ;</span><br><span class="line">implementsClause :</span><br><span class="line">&#39;implements&#39; «one or more identifiers separated by comma» ;</span><br><span class="line">classBody : &#39;&#123;&#39; «zero-or-more members» &#39;&#125;&#39; ;</span><br><span class="line">member : «nested classDefinition or field or method» ;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 <p>##5.2 Using Existing Grammars as a Guide<br>##5.3 Recognizing Common Language Patterns with ANTLR Grammars<br>常用语言模式:</p>
@@ -493,7 +495,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -515,7 +517,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

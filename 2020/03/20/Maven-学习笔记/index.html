@@ -104,7 +104,7 @@
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7295776-24b3692e5c50f974.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7295776-903e7936ece65af5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="article:published_time" content="2020-03-21T01:16:53.000Z">
-<meta property="article:modified_time" content="2020-03-21T01:37:50.049Z">
+<meta property="article:modified_time" content="2020-05-10T04:00:54.856Z">
 <meta property="article:author" content="Min Zhu">
 <meta property="article:tag" content="Maven">
 <meta property="article:tag" content="Apache">
@@ -370,6 +370,8 @@
 <h2 id="What-is-Maven"><a href="#What-is-Maven" class="headerlink" title="What is Maven?"></a>What is Maven?</h2><p>Maven 是 Apache 下的一个纯 Java 开发的开源项目，简单来说是一个项目管理工具，核心功能是合理叙述项目间的依赖关系。</p>
 <h2 id="Maven-java项目结构"><a href="#Maven-java项目结构" class="headerlink" title="Maven java项目结构"></a>Maven java项目结构</h2><p>simple<br>　—pom.xml　　　　核心配置，项目根下<br>　—src<br>　　—main　　　　　　<br>　　　 —java　　　　java源码目录<br>　　     　—resources　  java配置文件目录<br>　　—test<br>　　　—java　　　　测试源码目录<br>　　　—resources　  测试配置目录</p>
 <p>图中有一个target目录，是因为将该java项目进行了编译，src/main/java下的源代码就会编译成.class文件放入target目录中，target就是输出目录。</p>
+<a id="more"></a>
+
 <h2 id="POM-xml"><a href="#POM-xml" class="headerlink" title="POM.xml"></a>POM.xml</h2><p>POM.xml( Project Object Model，项目对象模型 ) 是Maven工程的基本工作单元，用于描述项目如何构建，声明项目依赖，等等。执行任务或目标时，Maven 会在当前目录中查找 POM。它读取 POM，获取所需的配置信息，然后执行目标。通俗点讲，就是通过pom.xml文件的配置获取jar包，而不用手动去添加jar包。</p>
 <p>所有 POM 文件都需要 project 元素和三个必需字段：groupId，artifactId，version。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;project xmlns &#x3D; &quot;http:&#x2F;&#x2F;maven.apache.org&#x2F;POM&#x2F;4.0.0&quot;</span><br><span class="line">    xmlns:xsi &#x3D; &quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2001&#x2F;XMLSchema-instance&quot;</span><br><span class="line">    xsi:schemaLocation &#x3D; &quot;http:&#x2F;&#x2F;maven.apache.org&#x2F;POM&#x2F;4.0.0</span><br><span class="line">    http:&#x2F;&#x2F;maven.apache.org&#x2F;xsd&#x2F;maven-4.0.0.xsd&quot;&gt;</span><br><span class="line"> </span><br><span class="line">    &lt;!-- 模型版本 --&gt;</span><br><span class="line">    &lt;modelVersion&gt;4.0.0&lt;&#x2F;modelVersion&gt;</span><br><span class="line">    &lt;!-- 公司或者组织的唯一标志，并且配置时生成的路径也是由此生成， 如com.companyname.project-group，maven会将该项目打成的jar包放本地路径：&#x2F;com&#x2F;companyname&#x2F;project-group --&gt;</span><br><span class="line">    &lt;groupId&gt;com.companyname.project-group&lt;&#x2F;groupId&gt;</span><br><span class="line"> </span><br><span class="line">    &lt;!-- 项目的唯一ID，一个groupId下面可能多个项目，就是靠artifactId来区分的 --&gt;</span><br><span class="line">    &lt;artifactId&gt;project&lt;&#x2F;artifactId&gt;</span><br><span class="line"> </span><br><span class="line">    &lt;!-- 版本号 --&gt;</span><br><span class="line">    &lt;version&gt;1.0&lt;&#x2F;version&gt;</span><br><span class="line">&lt;&#x2F;project&gt;</span><br></pre></td></tr></table></figure>
@@ -542,7 +544,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -564,7 +566,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
