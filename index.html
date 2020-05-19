@@ -375,29 +375,16 @@
 
       
         
-          
-            <p>面snowflake的时候面到过类似117的题，本身也是高频tree题，记录一下</p>
+          <p>面snowflake的时候面到过类似117的题，本身也是高频tree题，记录一下</p>
 <h2 id="116-Populating-Next-Right-Pointers-in-Each-Node"><a href="#116-Populating-Next-Right-Pointers-in-Each-Node" class="headerlink" title="116. Populating Next Right Pointers in Each Node"></a>116. Populating Next Right Pointers in Each Node</h2><p>这题是 perfect binary tree（Wikipedia: A perfect binary tree is a binary tree in which all interior nodes have two children and all leaves have the same depth or same level），所以简化了非常多。但是116和117的核心思路是一致的，这题如果不要求我们用constant extra space来做的话，思路就非常简单，寻常的bfs走一遍，生成每个next pointer就行了。但是普通的bfs显然不满足O(1)的空间要求，但是细细体会，next right pointer这个pointer其实可以提供给我们每一行的顺序，当我们要为child level构建next right pointer时，可以使用parent level已生成的pointer来提供bfs所需的信息。</p>
 <p>两种实现，recursive或iterative：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">connect</span><span class="params">(self, root: <span class="string">'Node'</span>)</span> -&gt; 'Node':</span></span><br><span class="line">        <span class="keyword">if</span> root <span class="keyword">and</span> root.left:</span><br><span class="line">            root.left.next = root.right</span><br><span class="line">            <span class="keyword">if</span> root.next:</span><br><span class="line">                root.right.next = root.next.left</span><br><span class="line">            self.connect(root.left)</span><br><span class="line">            self.connect(root.right)</span><br><span class="line">        <span class="keyword">return</span> root</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">connect</span><span class="params">(self, root: <span class="string">'Node'</span>)</span> -&gt; 'Node':</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        cur  = root</span><br><span class="line">        next = root.left</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> cur.left :</span><br><span class="line">            cur.left.next = cur.right</span><br><span class="line">            <span class="keyword">if</span> cur.next:</span><br><span class="line">                cur.right.next = cur.next.left</span><br><span class="line">                cur = cur.next</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                cur = next</span><br><span class="line">                next = cur.left</span><br><span class="line">        <span class="keyword">return</span> root</span><br></pre></td></tr></table></figure>
-
-<h2 id="117-Populating-Next-Right-Pointers-in-Each-Node-II"><a href="#117-Populating-Next-Right-Pointers-in-Each-Node-II" class="headerlink" title="117. Populating Next Right Pointers in Each Node II"></a>117. Populating Next Right Pointers in Each Node II</h2><p>这题没有perfect binary tree的条件，所以多了两个需解决的问题：</p>
-<ul>
-<li><p>parent.left.next并不一定指向parent.right，同样，parent.right.next也并不一定指向parent.next.left</p>
-<p>A: 判断下呗</p>
-</li>
-<li><p>当构建完一行的next pointers后，如何寻找下一行的head node</p>
-<p>A: 来一个dummy variable</p>
-</li>
-</ul>
-<p>假设我们已经建完parent行的next pointer，可以把它看成一个单向链表。那么我们需要做的就是，从parent node的head开始 (因为我们建了dummy，所以head就是dummy.next)，遍历parent level。在child level, 新建一个tail变量，初始值为dummy，在遍历parent的node时，不断更新tail，使其总是为已遍历的node的tail。具体实现如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">connect</span><span class="params">(self, root: <span class="string">'Node'</span>)</span> -&gt; 'Node':</span></span><br><span class="line">        tail = dummy = TreeNode()</span><br><span class="line">        cur = root</span><br><span class="line">        <span class="keyword">while</span> cur:</span><br><span class="line">            <span class="keyword">for</span> n <span class="keyword">in</span> (cur.left, cur.right):</span><br><span class="line">                tail.next = n</span><br><span class="line">                <span class="keyword">if</span> tail.next:</span><br><span class="line">                    tail = tail.next</span><br><span class="line">            cur = cur.next</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> cur:</span><br><span class="line">                cur, tail = dummy.next, dummy</span><br><span class="line">        <span class="keyword">return</span> root</span><br></pre></td></tr></table></figure>
-
-<p>另外，为了实现O(1) space，dummy是重复利用的，可能会有点confusing。</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/05/18/leetcode116-117/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
