@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="php," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="快速了解PHP和PHP Web开发的笔记。 PHP IntroPHP SyntaxPHP脚本在服务器端执行，返回HTML结果至浏览器。PHP脚本开始于&lt;?php，结束于?&gt;， 123&lt;?php&#x2F;&#x2F; PHP code goes here?&gt;  PHP中的关键字 (e.g. if, echo, etc) 大小写不敏感，但是变量名大小写敏感。 PHP VariablesPHP中变">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP 学习笔记">
+<meta property="og:url" content="https://minzhu0315.github.io/2020/05/23/php-study/index.html">
+<meta property="og:site_name" content="Min&#39;s Blog">
+<meta property="og:description" content="快速了解PHP和PHP Web开发的笔记。 PHP IntroPHP SyntaxPHP脚本在服务器端执行，返回HTML结果至浏览器。PHP脚本开始于&lt;?php，结束于?&gt;， 123&lt;?php&#x2F;&#x2F; PHP code goes here?&gt;  PHP中的关键字 (e.g. if, echo, etc) 大小写不敏感，但是变量名大小写敏感。 PHP VariablesPHP中变">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-23T20:38:30.000Z">
+<meta property="article:modified_time" content="2020-05-23T20:39:44.359Z">
+<meta property="article:author" content="Min Zhu">
+<meta property="article:tag" content="php">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://minzhu0315.github.io/2020/05/23/php-study/"/>
+
+
+
+
+
+  <title>PHP 学习笔记 | Min's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Min's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://minzhu0315.github.io/2020/05/23/php-study/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Min Zhu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avator.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Min's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">PHP 学习笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-23T16:38:30-04:00">
+                2020-05-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Programming/" itemprop="url" rel="index">
+                    <span itemprop="name">Programming</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>快速了解PHP和PHP Web开发的笔记。</p>
+<h1 id="PHP-Intro"><a href="#PHP-Intro" class="headerlink" title="PHP Intro"></a>PHP Intro</h1><h2 id="PHP-Syntax"><a href="#PHP-Syntax" class="headerlink" title="PHP Syntax"></a>PHP Syntax</h2><p>PHP脚本在服务器端执行，返回HTML结果至浏览器。PHP脚本开始于<code>&lt;?php</code>，结束于<code>?&gt;</code>，</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">// PHP code goes here</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>PHP中的关键字 (e.g. <code>if</code>, <code>echo</code>, etc) 大小写不敏感，但是变量名大小写敏感。</p>
+<h2 id="PHP-Variables"><a href="#PHP-Variables" class="headerlink" title="PHP Variables"></a>PHP Variables</h2><p>PHP中变量以<code>$</code>开头，后面跟着变量名。例如：</p>
+<a id="more"></a>
+
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$txt = <span class="string">"Hello world!"</span>;</span><br><span class="line">$x = <span class="number">5</span>;</span><br><span class="line">$y = <span class="number">10.5</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>命名规则跟其他语言差不多，别搞些奇奇怪怪的就行。</p>
+<h2 id="PHP-Echo-Print"><a href="#PHP-Echo-Print" class="headerlink" title="PHP Echo/Print"></a>PHP Echo/Print</h2><p>echo可以有多个参数，print只能一个。echo 输出的速度比 print 快， echo 没有返回值，print有返回值1。其他就差不多。</p>
+<h2 id="PHP-Data-Types"><a href="#PHP-Data-Types" class="headerlink" title="PHP Data Types"></a>PHP Data Types</h2><ul>
+<li><p>String</p>
+</li>
+<li><p>Integer</p>
+</li>
+<li><p>Float (floating point numbers - also called double)</p>
+</li>
+<li><p>Boolean </p>
+</li>
+<li><p>Array (e.g. <code>$cars = array(&quot;Volvo&quot;,&quot;BMW&quot;,&quot;Toyota&quot;);</code>)</p>
+</li>
+<li><p>Object</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">Car</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">$this</span>-&gt;model = <span class="string">"VW"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// create an object</span></span><br><span class="line">$herbie = <span class="keyword">new</span> Car();</span><br><span class="line"></span><br><span class="line"><span class="comment">// show object properties</span></span><br><span class="line"><span class="keyword">echo</span> $herbie-&gt;model;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>NULL</p>
+</li>
+<li><p>Resource</p>
+<blockquote>
+<p>The special resource type is not an actual data type. It is the storing of a reference to functions and resources external to PHP.</p>
+<p>A common example of using the resource data type is a database call.</p>
+</blockquote>
+</li>
+</ul>
+<p><code>var_dump()</code>函数可以返回data type和value</p>
+<h2 id="PHP-Strings"><a href="#PHP-Strings" class="headerlink" title="PHP Strings"></a>PHP Strings</h2><ul>
+<li>strlen()</li>
+<li>str_word_count()</li>
+<li>strrev() -&gt;Reverse a String</li>
+<li>strpos() -&gt; Search For a Text Within a String</li>
+<li>str_replace()</li>
+</ul>
+<h2 id="PHP-Numbers"><a href="#PHP-Numbers" class="headerlink" title="PHP Numbers"></a>PHP Numbers</h2><ul>
+<li>is_int()</li>
+<li>is_integer() - alias of is_int()</li>
+<li>is_long() - alias of is_int()</li>
+<li>is_float()</li>
+<li>is_double() - alias of is_float()</li>
+<li>is_finite()</li>
+<li>is_infinite()</li>
+<li>is_nan()</li>
+<li>is_numeric() -&gt; check if a string is numeric string</li>
+<li>The (int), (integer), or intval() function are often used to convert a value (could be string or  float) to an integer.</li>
+</ul>
+<h2 id="PHP-Math"><a href="#PHP-Math" class="headerlink" title="PHP Math"></a>PHP Math</h2><ul>
+<li>pi()</li>
+<li>min() max()</li>
+<li>abs()</li>
+<li>sqrt()</li>
+<li>round()</li>
+<li>rand()</li>
+</ul>
+<h2 id="PHP-Constants"><a href="#PHP-Constants" class="headerlink" title="PHP Constants"></a>PHP Constants</h2><p>感觉跟java里加了final的变量差不多。用define() 函数来建。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">define(<span class="string">"GREETING"</span>, <span class="string">"Welcome to W3Schools.com!"</span>);</span><br><span class="line"><span class="keyword">echo</span> GREETING;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="PHP-Operators"><a href="#PHP-Operators" class="headerlink" title="PHP Operators"></a>PHP Operators</h2><p> 稍微特殊点的运算符就**</p>
+<p>==/!=和===/!==的区别：是否比较type</p>
+<p>&lt;=&gt; (spaceship)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a &lt;&#x3D;&gt; b :&#x3D;</span><br><span class="line">  if a &lt; b then return -1</span><br><span class="line">  if a &#x3D; b then return  0</span><br><span class="line">  if a &gt; b then return  1</span><br></pre></td></tr></table></figure>
+
+<p>支持自增自减</p>
+<p>逻辑运算符：and/or/xor/&amp;&amp;/||/!</p>
+<h3 id="PHP-String-Operators"><a href="#PHP-String-Operators" class="headerlink" title="PHP String Operators"></a>PHP String Operators</h3><ul>
+<li><code>.</code> 连接两个string </li>
+<li><code>.=</code> Append str2 to str1</li>
+</ul>
+<h3 id="PHP-Array-Operators"><a href="#PHP-Array-Operators" class="headerlink" title="PHP Array Operators"></a>PHP Array Operators</h3><ul>
+<li>+</li>
+<li>==</li>
+<li>===</li>
+<li>!=</li>
+<li>&lt;&gt;</li>
+<li>!==</li>
+</ul>
+<h3 id="PHP-Conditional-Assignment-Operators"><a href="#PHP-Conditional-Assignment-Operators" class="headerlink" title="PHP Conditional Assignment Operators"></a>PHP Conditional Assignment Operators</h3><ul>
+<li><p><code>?:</code></p>
+</li>
+<li><p><code>??</code> (e.g. <code>$x = *expr1* ?? *expr2*</code>)</p>
+<p>expr1存在并不为null时返回expr2 反之expr2</p>
+</li>
+</ul>
+<h2 id="PHP-Conditional-Statements"><a href="#PHP-Conditional-Statements" class="headerlink" title="PHP Conditional Statements"></a>PHP Conditional Statements</h2><ul>
+<li><code>if</code> statement - executes some code if one condition is true</li>
+<li><code>if...else</code> statement - executes some code if a condition is true and another code if that condition is false</li>
+<li><code>if...elseif...else</code> statement - executes different codes for more than two conditions</li>
+<li><code>switch</code> statement - selects one of many blocks of code to be executed</li>
+</ul>
+<h2 id="PHP-Loops"><a href="#PHP-Loops" class="headerlink" title="PHP Loops"></a>PHP Loops</h2><ul>
+<li><code>while</code> - loops through a block of code as long as the specified condition is true</li>
+<li><code>do...while</code> - loops through a block of code once, and then repeats the loop as long as the specified condition is true</li>
+<li><code>for</code> - loops through a block of code a specified number of times</li>
+<li><code>foreach</code> - loops through a block of code for each element in an array</li>
+</ul>
+<h2 id="PHP-Arrays"><a href="#PHP-Arrays" class="headerlink" title="PHP Arrays"></a>PHP Arrays</h2><h2 id="PHP-Superglobals"><a href="#PHP-Superglobals" class="headerlink" title="PHP Superglobals"></a>PHP Superglobals</h2><ul>
+<li>$GLOBALS</li>
+<li>$_SERVER</li>
+<li>$_REQUEST</li>
+<li>$_POST</li>
+<li>$_GET</li>
+<li>$_FILES</li>
+<li>$_ENV</li>
+<li>$_COOKIE</li>
+<li>$_SESSION</li>
+</ul>
+<h1 id="PHP-Forms"><a href="#PHP-Forms" class="headerlink" title="PHP Forms"></a>PHP Forms</h1><h2 id="Form-handling"><a href="#Form-handling" class="headerlink" title="Form handling"></a>Form handling</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"welcome.php"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span><br><span class="line">Name: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"name"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">E-mail: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"email"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>welcome.php looks like:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">Welcome &lt;?php echo $_POST[&quot;name&quot;]; ?&gt;&lt;br&gt;</span><br><span class="line">Your email address is: &lt;?php echo $_POST[&quot;email&quot;]; ?&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Form-Validation"><a href="#Form-Validation" class="headerlink" title="Form Validation"></a>Form Validation</h2><p>清理并检查输入</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">// define variables and set to empty values</span></span><br><span class="line">$name = $email = $gender = $comment = $website = <span class="string">""</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> ($_SERVER[<span class="string">"REQUEST_METHOD"</span>] == <span class="string">"POST"</span>) &#123;</span><br><span class="line">  $name = test_input($_POST[<span class="string">"name"</span>]);</span><br><span class="line">  $email = test_input($_POST[<span class="string">"email"</span>]);</span><br><span class="line">  $website = test_input($_POST[<span class="string">"website"</span>]);</span><br><span class="line">  $comment = test_input($_POST[<span class="string">"comment"</span>]);</span><br><span class="line">  $gender = test_input($_POST[<span class="string">"gender"</span>]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test_input</span><span class="params">($data)</span> </span>&#123;</span><br><span class="line">  $data = trim($data);</span><br><span class="line">  $data = stripslashes($data);</span><br><span class="line">  $data = htmlspecialchars($data); <span class="comment"># 这个很重要</span></span><br><span class="line">  <span class="keyword">return</span> $data;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Check-Email-and-URL"><a href="#Check-Email-and-URL" class="headerlink" title="Check Email and URL"></a>Check Email and URL</h3><p>filter_var() function to check whether an email address is well-formed</p>
+<p>preg_match() 正则检查URL</p>
+<h2 id="Form-Required"><a href="#Form-Required" class="headerlink" title="Form Required"></a>Form Required</h2><p>display error message</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;form method&#x3D;&quot;post&quot; action&#x3D;&quot;&lt;?php echo htmlspecialchars($_SERVER[&quot;PHP_SELF&quot;]);?&gt;&quot;&gt;</span><br><span class="line"></span><br><span class="line">Name: &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;name&quot;&gt;</span><br><span class="line">&lt;span class&#x3D;&quot;error&quot;&gt;* &lt;?php echo $nameErr;?&gt;&lt;&#x2F;span&gt;</span><br><span class="line">&lt;br&gt;&lt;br&gt;</span><br><span class="line">E-mail:</span><br><span class="line">&lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;email&quot;&gt;</span><br><span class="line">&lt;span class&#x3D;&quot;error&quot;&gt;* &lt;?php echo $emailErr;?&gt;&lt;&#x2F;span&gt;</span><br><span class="line">&lt;br&gt;&lt;br&gt;</span><br><span class="line">&lt;input type&#x3D;&quot;submit&quot; name&#x3D;&quot;submit&quot; value&#x3D;&quot;Submit&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;form&gt;</span><br></pre></td></tr></table></figure>
+
+<p>check required field</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">// define variables and set to empty values</span></span><br><span class="line">$nameErr = $emailErr = $genderErr = $websiteErr = <span class="string">""</span>;</span><br><span class="line">$name = $email = $gender = $comment = $website = <span class="string">""</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> ($_SERVER[<span class="string">"REQUEST_METHOD"</span>] == <span class="string">"POST"</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">empty</span>($_POST[<span class="string">"name"</span>])) &#123;</span><br><span class="line">    $nameErr = <span class="string">"Name is required"</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    $name = test_input($_POST[<span class="string">"name"</span>]);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">empty</span>($_POST[<span class="string">"email"</span>])) &#123;</span><br><span class="line">    $emailErr = <span class="string">"Email is required"</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    $email = test_input($_POST[<span class="string">"email"</span>]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="PHP-OOP"><a href="#PHP-OOP" class="headerlink" title="PHP OOP"></a>PHP OOP</h1><h2 id="PHP-Class"><a href="#PHP-Class" class="headerlink" title="PHP Class"></a>PHP Class</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fruit</span> </span>&#123;</span><br><span class="line">  <span class="comment">// Properties</span></span><br><span class="line">  <span class="keyword">public</span> $name;</span><br><span class="line">  <span class="keyword">public</span> $color;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Methods</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">set_name</span><span class="params">($name)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">$this</span>-&gt;name = $name;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">get_name</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;name;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Constructor-amp-Destructor"><a href="#Constructor-amp-Destructor" class="headerlink" title="Constructor &amp; Destructor"></a>Constructor &amp; Destructor</h2><p>__construct() function</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fruit</span> </span>&#123;</span><br><span class="line">  <span class="keyword">public</span> $name;</span><br><span class="line">  <span class="keyword">public</span> $color;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">($name)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">$this</span>-&gt;name = $name;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">get_name</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;name;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$apple = <span class="keyword">new</span> Fruit(<span class="string">"Apple"</span>);</span><br><span class="line"><span class="keyword">echo</span> $apple-&gt;get_name();</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>__destructor() function</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fruit</span> </span>&#123;</span><br><span class="line">  <span class="keyword">public</span> $name;</span><br><span class="line">  <span class="keyword">public</span> $color;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">($name)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">$this</span>-&gt;name = $name;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">__destruct</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"The fruit is &#123;$this-&gt;name&#125;."</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$apple = <span class="keyword">new</span> Fruit(<span class="string">"Apple"</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Access-Modifiers"><a href="#Access-Modifiers" class="headerlink" title="Access Modifiers"></a>Access Modifiers</h2><ul>
+<li><p>public</p>
+</li>
+<li><p>protected</p>
+</li>
+<li><p>private</p>
+<p>修饰变量</p>
+</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fruit</span> </span>&#123;</span><br><span class="line">  <span class="keyword">public</span> $name;</span><br><span class="line">  <span class="keyword">protected</span> $color;</span><br><span class="line">  <span class="keyword">private</span> $weight;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$mango = <span class="keyword">new</span> Fruit();</span><br><span class="line">$mango-&gt;name = <span class="string">'Mango'</span>; <span class="comment">// OK</span></span><br><span class="line">$mango-&gt;color = <span class="string">'Yellow'</span>; <span class="comment">// ERROR</span></span><br><span class="line">$mango-&gt;weight = <span class="string">'300'</span>; <span class="comment">// ERROR</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>修饰方法</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fruit</span> </span>&#123;</span><br><span class="line">  <span class="keyword">public</span> $name;</span><br><span class="line">  <span class="keyword">public</span> $color;</span><br><span class="line">  <span class="keyword">public</span> $weight;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">set_name</span><span class="params">($n)</span> </span>&#123;  <span class="comment">// a public function (default)</span></span><br><span class="line">    <span class="keyword">$this</span>-&gt;name = $n;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">set_color</span><span class="params">($n)</span> </span>&#123; <span class="comment">// a protected function</span></span><br><span class="line">    <span class="keyword">$this</span>-&gt;color = $n;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">set_weight</span><span class="params">($n)</span> </span>&#123; <span class="comment">// a private function</span></span><br><span class="line">    <span class="keyword">$this</span>-&gt;weight = $n;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$mango = <span class="keyword">new</span> Fruit();</span><br><span class="line">$mango-&gt;set_name(<span class="string">'Mango'</span>); <span class="comment">// OK</span></span><br><span class="line">$mango-&gt;set_color(<span class="string">'Yellow'</span>); <span class="comment">// ERROR</span></span><br><span class="line">$mango-&gt;set_weight(<span class="string">'300'</span>); <span class="comment">// ERROR</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Inheritance"><a href="#Inheritance" class="headerlink" title="Inheritance"></a>Inheritance</h2><p><code>extends</code> 关键词</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fruit</span> </span>&#123;</span><br><span class="line">  <span class="keyword">public</span> $name;</span><br><span class="line">  <span class="keyword">public</span> $color;</span><br><span class="line">  <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">($name, $color)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">$this</span>-&gt;name = $name;</span><br><span class="line">    <span class="keyword">$this</span>-&gt;color = $color;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">intro</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"The fruit is &#123;$this-&gt;name&#125; and the color is &#123;$this-&gt;color&#125;."</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Strawberry is inherited from Fruit</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Strawberry</span> <span class="keyword">extends</span> <span class="title">Fruit</span> </span>&#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">message</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"Am I a fruit or a berry? "</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">$strawberry = <span class="keyword">new</span> Strawberry(<span class="string">"Strawberry"</span>, <span class="string">"red"</span>);</span><br><span class="line">$strawberry-&gt;message();</span><br><span class="line">$strawberry-&gt;intro();</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>子类不能继承父类的protected function</p>
+</li>
+<li><p>子类可以override父类的方法</p>
+</li>
+<li><p>父类的final 修饰符可以阻止子类override</p>
+</li>
+</ul>
+<h2 id="Class-Constants"><a href="#Class-Constants" class="headerlink" title="Class Constants"></a>Class Constants</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Goodbye</span> </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> LEAVING_MESSAGE = <span class="string">"Thank you for visiting W3Schools.com!"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> Goodbye::LEAVING_MESSAGE;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>和static变量不一样喔，具体区别参考<a href="https://stackoverflow.com/questions/1685922/php-5-const-vs-static" target="_blank" rel="noopener">这</a>。</p>
+<h2 id="Abstract-Class"><a href="#Abstract-Class" class="headerlink" title="Abstract Class"></a>Abstract Class</h2><blockquote>
+<p>An abstract class is a class that contains at least one abstract method. An abstract method is a method that is declared, but not implemented in the code.</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">ParentClass</span> </span>&#123;</span><br><span class="line">  <span class="keyword">abstract</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">someMethod1</span><span class="params">()</span></span>;</span><br><span class="line">  <span class="keyword">abstract</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">someMethod2</span><span class="params">($name, $color)</span></span>;</span><br><span class="line">  <span class="keyword">abstract</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">someMethod3</span><span class="params">()</span> : <span class="title">string</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>子类继承规则</p>
+<ul>
+<li>The child class method must be defined with the same name and it redeclares the parent abstract method</li>
+<li>The child class method must be defined with the same or a less restricted access modifier</li>
+<li>The number of required arguments must be the same. However, the child class may have optional arguments in addition</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">ParentClass</span> </span>&#123;</span><br><span class="line">  <span class="comment">// Abstract method with an argument</span></span><br><span class="line">  <span class="keyword">abstract</span> <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">prefixName</span><span class="params">($name)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ChildClass</span> <span class="keyword">extends</span> <span class="title">ParentClass</span> </span>&#123;</span><br><span class="line">  <span class="comment">// The child class may define optional arguments that are not in the parent's abstract method</span></span><br><span class="line">  <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">prefixName</span><span class="params">($name, $separator = <span class="string">"."</span>, $greet = <span class="string">"Dear"</span>)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> ($name == <span class="string">"John Doe"</span>) &#123;</span><br><span class="line">      $prefix = <span class="string">"Mr"</span>;</span><br><span class="line">    &#125; <span class="keyword">elseif</span> ($name == <span class="string">"Jane Doe"</span>) &#123;</span><br><span class="line">      $prefix = <span class="string">"Mrs"</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      $prefix = <span class="string">""</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"&#123;$greet&#125; &#123;$prefix&#125;&#123;$separator&#125; &#123;$name&#125;"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$class = <span class="keyword">new</span> ChildClass;</span><br><span class="line"><span class="keyword">echo</span> $class-&gt;prefixName(<span class="string">"John Doe"</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</span><br><span class="line"><span class="keyword">echo</span> $class-&gt;prefixName(<span class="string">"Jane Doe"</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Traits"><a href="#Traits" class="headerlink" title="Traits"></a>Traits</h2><blockquote>
+<p>Traits are used to declare methods that can be used in multiple classes. Traits can have methods and abstract methods that can be used in multiple classes, and the methods can have any access modifier (public, private, or protected).</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">trait</span> message1 &#123;</span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">msg1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"OOP is fun! "</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Welcome</span> </span>&#123;</span><br><span class="line">  <span class="keyword">use</span> <span class="title">message1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$obj = <span class="keyword">new</span> Welcome();</span><br><span class="line">$obj-&gt;msg1();</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>trait和interface不一样喔。具体区别参考<a href="https://www.geeksforgeeks.org/traits-vs-interfaces-in-php/" target="_blank" rel="noopener">这</a>。</p>
+<h2 id="Static-Methods"><a href="#Static-Methods" class="headerlink" title="Static Methods"></a>Static Methods</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClassName</span> </span>&#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">staticMethod</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"Hello World!"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>To access, use <code>ClassName::staticMethod();</code></p>
+<p>To call a static method from a child class, use the <code>parent</code> keyword inside the child class. Here, the static method can be <code>public</code> or <code>protected</code>.</p>
+<h2 id="Static-Properties"><a href="#Static-Properties" class="headerlink" title="Static Properties"></a>Static Properties</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">pi</span> </span>&#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> $value=<span class="number">3.14159</span>;</span><br><span class="line">  <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">staticValue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span>::$value;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$pi = <span class="keyword">new</span> pi();</span><br><span class="line"><span class="keyword">echo</span> $pi-&gt;staticValue();</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>use <code>parent</code> keyword</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">pi</span> </span>&#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> $value=<span class="number">3.14159</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">x</span> <span class="keyword">extends</span> <span class="title">pi</span> </span>&#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">xStatic</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">parent</span>::$value;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Get value of static property directly via child class</span></span><br><span class="line"><span class="keyword">echo</span> x::$value;</span><br><span class="line"></span><br><span class="line"><span class="comment">// or get value of static property via xStatic() method</span></span><br><span class="line">$x = <span class="keyword">new</span> x();</span><br><span class="line"><span class="keyword">echo</span> $x-&gt;xStatic();</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ul>
+<li><a href="https://www.w3schools.com/php/php_syntax.asp" target="_blank" rel="noopener">w3schools</a></li>
+<li><a href="https://www.runoob.com/php/php-syntax.html" target="_blank" rel="noopener">菜鸟教程</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/php/" rel="tag"># php</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/05/19/leetcode314/" rel="next" title="leetcode 314 解题思路及follow up记录">
+                <i class="fa fa-chevron-left"></i> leetcode 314 解题思路及follow up记录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avator.jpeg"
+               alt="Min Zhu" />
+          <p class="site-author-name" itemprop="name">Min Zhu</p>
+           
+              <p class="site-description motion-element" itemprop="description">Think of nothing things, think of wind.</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/minzhu0315" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/min-zhu-703485149/" target="_blank" title="Linkedin">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Linkedin
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PHP-Intro"><span class="nav-number">1.</span> <span class="nav-text">PHP Intro</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP-Syntax"><span class="nav-number">1.1.</span> <span class="nav-text">PHP Syntax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP-Variables"><span class="nav-number">1.2.</span> <span class="nav-text">PHP Variables</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP-Echo-Print"><span class="nav-number">1.3.</span> <span class="nav-text">PHP Echo&#x2F;Print</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP-Data-Types"><span class="nav-number">1.4.</span> <span class="nav-text">PHP Data Types</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP-Strings"><span class="nav-number">1.5.</span> <span class="nav-text">PHP Strings</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP-Numbers"><span class="nav-number">1.6.</span> <span class="nav-text">PHP Numbers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP-Math"><span class="nav-number">1.7.</span> <span class="nav-text">PHP Math</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP-Constants"><span class="nav-number">1.8.</span> <span class="nav-text">PHP Constants</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP-Operators"><span class="nav-number">1.9.</span> <span class="nav-text">PHP Operators</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PHP-String-Operators"><span class="nav-number">1.9.1.</span> <span class="nav-text">PHP String Operators</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHP-Array-Operators"><span class="nav-number">1.9.2.</span> <span class="nav-text">PHP Array Operators</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHP-Conditional-Assignment-Operators"><span class="nav-number">1.9.3.</span> <span class="nav-text">PHP Conditional Assignment Operators</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP-Conditional-Statements"><span class="nav-number">1.10.</span> <span class="nav-text">PHP Conditional Statements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP-Loops"><span class="nav-number">1.11.</span> <span class="nav-text">PHP Loops</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP-Arrays"><span class="nav-number">1.12.</span> <span class="nav-text">PHP Arrays</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP-Superglobals"><span class="nav-number">1.13.</span> <span class="nav-text">PHP Superglobals</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PHP-Forms"><span class="nav-number">2.</span> <span class="nav-text">PHP Forms</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Form-handling"><span class="nav-number">2.1.</span> <span class="nav-text">Form handling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Form-Validation"><span class="nav-number">2.2.</span> <span class="nav-text">Form Validation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Check-Email-and-URL"><span class="nav-number">2.2.1.</span> <span class="nav-text">Check Email and URL</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Form-Required"><span class="nav-number">2.3.</span> <span class="nav-text">Form Required</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PHP-OOP"><span class="nav-number">3.</span> <span class="nav-text">PHP OOP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP-Class"><span class="nav-number">3.1.</span> <span class="nav-text">PHP Class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Constructor-amp-Destructor"><span class="nav-number">3.2.</span> <span class="nav-text">Constructor &amp; Destructor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Access-Modifiers"><span class="nav-number">3.3.</span> <span class="nav-text">Access Modifiers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Inheritance"><span class="nav-number">3.4.</span> <span class="nav-text">Inheritance</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Class-Constants"><span class="nav-number">3.5.</span> <span class="nav-text">Class Constants</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Abstract-Class"><span class="nav-number">3.6.</span> <span class="nav-text">Abstract Class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Traits"><span class="nav-number">3.7.</span> <span class="nav-text">Traits</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Static-Methods"><span class="nav-number">3.8.</span> <span class="nav-text">Static Methods</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Static-Properties"><span class="nav-number">3.9.</span> <span class="nav-text">Static Properties</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考链接"><span class="nav-number">4.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Min Zhu</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
+    NexT.Gemini
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
